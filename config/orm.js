@@ -15,7 +15,7 @@ var orm = {
             if (err) throw err;
             return result;
         });
-    },
+    }
 
 
     // insertOne: function (tableInput) {
