@@ -10,6 +10,6 @@ id int NOT NULL AUTO_INCREMENT,
 --      * **burger_name**: a string.
 burger_name VARCHAR(100),
 --      * **devoured**: a boolean.
-devoured boolean,
+devoured boolean default true,
 PRIMARY KEY (id)
 );

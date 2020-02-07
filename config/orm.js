@@ -8,35 +8,33 @@ var connection = require("../config/connection.js");
 // * `updateOne()`
 
 var orm = {
-    selectAll: function (tableInput) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM ?? ";
 
         connection.query(queryString, [tableInput], function (err, result) {
             if (err) throw err;
-            return result;
+            cb(result);
+        });
+    },
+    insertOne: function (tableInput, col, val, cb) {
+        var queryString = "INSERT INTO  ?? (??) VALUES (?)";
+
+        connection.query(queryString, [tableInput, col, val], function (err, result) {
+            if (err) throw err;
+            cb(result);
+        });
+    },
+
+
+
+    updateOne: function (tableInput, col, boolVal, id, val, cb) {
+        var queryString = "UPDATE * FROM ?? SET ?? WHERE ?? = ? ";
+
+        connection.query(queryString, [tableInput, col, boolVal, id, val], function (err, result) {
+            if (err) throw err;
+            cb(result);
         });
     }
-
-
-    // insertOne: function (tableInput) {
-    //     var queryString = "SELECT * FROM ?? ";
-
-    //     connection.query(queryString, [tableInput], function (err, result) {
-    //         if (err) throw err;
-    //         return result;
-    //     });
-    // },
-
-
-
-    // updateOne: function (tableInput) {
-    //     var queryString = "SELECT * FROM ?? ";
-
-    //     connection.query(queryString, [tableInput], function (err, result) {
-    //         if (err) throw err;
-    //         return result;
-    //     });
-    // }
 }
 
 

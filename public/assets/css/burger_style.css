@@ -1,0 +1,39 @@
+#img-container{
+    height: 165px;
+    width: 273px;
+}
+img{
+    height: 165px;
+    width: 273px;
+    object-fit: cover;
+    object-position: 0px 0px;
+    border: black solid 4px;
+
+}
+
+#logo-container{
+    text-align: center;
+    border-radius: 25px;
+    width: 100px;
+}
+.logo{
+    margin: 0px;
+    width: 100px;
+    background-color: tan;
+    
+}
+#bun1{
+    color: chocolate;
+    letter-spacing: 18px;
+    
+}
+#bun2{
+    color: chocolate;
+    
+}
+#patty{
+    color: chocolate;
+    border-top: 3px green solid;
+    border-bottom: 3px red solid;
+    letter-spacing: 3px;
+}
